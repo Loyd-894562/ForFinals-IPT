@@ -1,11 +1,11 @@
 @extends('base')
 
-@include('_navbar')
+@include('navbar')
 @section('content')
 
 <div class="container">
 
-    <h1 class="text-center mt-2">Hello, {{$user->name}}</h1>
+    <h1 class="text-center mt-2">Hi there! {{$user->name}}</h1>
 
     <h2>All Registered Users</h2>
     <table class="table">

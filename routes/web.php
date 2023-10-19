@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\LogController;
-use App\Http\Controllers\MedicineController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Queue\Jobs\Job;
 
 /*
@@ -31,12 +31,12 @@ Route::middleware(['auth','verified'])->group (function(){
 
     Route::get('/dashboard', [AuthController::class, 'dashboard']);
 
-    Route::get('/medicine', [MedicineController::class, 'index'])->name('medicine.index');
-    Route::get('/medicine/create', [MedicineController::class, 'create'])->name('medicine.create');
-    Route::post('/medicine', [MedicineController::class, 'store'])->name('medicine.store');
-    Route::get('/medicine/edit/{medicine}', [MedicineController::class, 'edit'])->name('medicine.edit');
-    Route::put('/medicine/{medicine}', [MedicineController::class, 'update'])->name('medicine.update');
-    Route::delete('/medicine/{medicine}', [MedicineController::class, 'destroy'])->name('medicine.destroy');
+    Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+    Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
+    Route::post('/product', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/product/edit/{product}', [ProductController::class, 'edit'])->name('product.edit');
+    Route::put('/product/{product}', [ProductController::class, 'update'])->name('product.update');
+    Route::delete('/product/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
 
     Route::get('/logs', [LogController::class, 'index'])->name('logs.index');
 });

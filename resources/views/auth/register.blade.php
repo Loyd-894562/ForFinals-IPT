@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container col-md-6 offset-md-3 mt-5">
-        <h1 class="text-center">Register Account</h1>
+        <h1 class="text-center">Create an Account</h1>
         <hr>
 
         <form action="{{ '/register' }}" method="POST">
@@ -43,7 +43,7 @@
 
             <div class="d-flex">
                 <div class="flex-grow-1">
-                    <a href="{{ '/' }}">Already have an account? Log in</a>
+                    <a href="{{ '/' }}">Already have an account? Click here to Log in.</a>
                 </div>
                 <button class="btn btn-primary px-5" type="submit">Register</button>
             </div>

@@ -3,7 +3,7 @@
     @section('content')
 
     <div class="container col-md-6 offset-md-3 mt-5">
-        <h1 class="text-center">Welcome</h1>
+        <h1 class="text-center">Welcome to Amazon PH</h1>
         
         @if (session('message'))
             <div class="alert alert-success">{{ session('message') }}</div>
@@ -28,7 +28,7 @@
 
             <div class="d-flex">
                 <div class="flex-grow-1">
-                    <a href="{{ '/register' }}">Sign up for an account</a>
+                    <a href="{{ '/register' }}">Don't have an account? Click here to Sign up for an account.</a>
                 </div>
                 <button class="btn btn-primary px-5" type="submit">Login</button>
             </div>

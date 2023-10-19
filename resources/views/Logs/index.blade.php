@@ -1,6 +1,6 @@
 @extends('base')
 
-@include('_navbar')
+@include('navbar')
 
 @section('content')
 <div class="row">
@@ -16,7 +16,7 @@
   <table class="table table-bordered">
     <thead style="background-color: #BFACE0">
     <tr>
-        {{-- <th>Medicine ID</th> --}}
+        {{-- <th>Product ID</th> --}}
         <th>Timestamp</th>
         <th>Log Entry</th>
 
