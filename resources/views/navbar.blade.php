@@ -7,19 +7,19 @@
 
       <div class=" collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto ">
-          <li class="nav-item">
-            <a class="nav-link mx-2" aria-current="page" href="/dashboard">Home</a>
+          <li class="nav-item text-white">
+            <a class="nav-link mx-2  text-white" aria-current="page" href="/dashboard">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link mx-2" href="/product">Product</a>
+          <li class="nav-item  text-white">
+            <a class="nav-link mx-2  text-white"  href="/product">Product</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link mx-2" href="/logs">Logs</a>
+          <li class="nav-item  text-white">
+            <a class="nav-link mx-2  text-white" href="/logs">Logs</a>
           </li>
           <li class="nav-item">
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <button type="submit" class="nav-link btn btn-link mx-2">Logout</button>
+                <button type="submit" class="nav-link btn btn-link mx-2  text-white">Logout</button>
             </form>
         </li>
 
@@ -30,7 +30,7 @@
 
   <style>
     .navbar {
-      background-color: blue;
+      background-color: #0077b6;
     }
     
   #nav-link {

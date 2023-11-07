@@ -1,6 +1,6 @@
 @extends('base')
 
-@include('_navbar')
+@include('navbar')
 
 @section('content')
 

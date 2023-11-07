@@ -13,8 +13,8 @@
     </div>
 
   </div>
-  <table class="table table-bordered">
-    <thead style="background-color: #BFACE0">
+  <table class="table table-bordered ">
+    <thead style="background-color: #0077b6" class="text-white text-center">
     <tr>
         {{-- <th>Product ID</th> --}}
         <th>Timestamp</th>
@@ -22,7 +22,7 @@
 
     </tr>
     </thead>
-    <tbody>
+    <tbody class="text-center">
       @foreach ($logEntries as $logEntry)
         <tr>
             {{-- <td>{{ $med->id }}</td> --}}
