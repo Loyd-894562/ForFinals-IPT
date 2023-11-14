@@ -2,6 +2,8 @@
 
 use App\Events\UserLog;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\User;
+use App\Http\Controllers\TestEnrollmentController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\LogController;
@@ -39,7 +41,9 @@ Route::middleware(['auth','verified'])->group (function(){
     Route::delete('/product/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
 
     Route::get('/logs', [LogController::class, 'index'])->name('logs.index');
+    Route::get('/send-testenrollment', [TestEnrollmentController::class, 'sendTestNotification']);
 });
 
 
 Route::get('/sendmail', [EmailController::class, 'sendEmail']);
+
