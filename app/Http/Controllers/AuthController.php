@@ -11,6 +11,10 @@ use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
+
+    public function explore(){
+        return view('explore');
+    }
     public function loginForm(){
         // \App\Jobs\CustomerJob::dispatch();
         return view('auth.login');
@@ -74,7 +78,7 @@ class AuthController extends Controller
         //     $mail->subject('Account Verification');
         // });
 
-        return redirect('/')->with('message', ' Your account has been created. Please check your email for the verification link.');
+        return redirect('/login')->with('message', ' Your account has been created. Please check your email for the verification link.');
     }
 
     public function verification(User $user, $token){
@@ -87,7 +91,7 @@ class AuthController extends Controller
         $user->save();
 
         dispatch(new CustomerJob($user));
-        return redirect('/')->with('message', 'Your account has been verified');
+        return redirect('/login')->with('message', 'Your account has been verified');
 
     }
 

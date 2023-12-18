@@ -11,6 +11,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Bus;
 
 class CustomerJob implements ShouldQueue
 {
@@ -42,4 +43,16 @@ class CustomerJob implements ShouldQueue
         Mail::to($this->user->email)->send(new SendMailable($this->user));
 
     }
+
+    public function job()
+    {
+        // Fetch a user, for example
+        $user = User::find(1);
+
+        // Dispatch the job
+        CustomerJob::dispatch($user);
+
+        return response()->json(['message' => 'Job dispatched successfully']);
+    }
+
 }

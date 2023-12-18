@@ -21,11 +21,19 @@ use Illuminate\Queue\Jobs\Job;
 |
 */
 
-Route::get('/', [AuthController::class , 'loginForm'])->name('login');
-Route::post('/',[AuthController::class, 'login']);
-Route::get('/register', [AuthController::class , 'registerForm']);
-Route::post('/register', [AuthController::class , 'register'])->name('register');
-Route::get('/verification/{user}/{token}', [AuthController::class, 'verification']);
+// routes/web.php
+
+Route::get('/', function () {
+    return view('landing');
+})->name('landing');
+
+Route::post('/explore', [AuthController::class, 'explore'])->name('explore.post');
+Route::get('/explore', [AuthController::class, 'explore'])->name('explore');
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
+Route::post('/register', [AuthController::class, 'register'])->name('register.post');
+Route::get('/register', [AuthController::class, 'registerForm'])->name('register');
+Route::get('/verification/{user}/{token}', [AuthController::class, 'verification'])->name('verification');
 
 Route::middleware(['auth','verified'])->group (function(){
 
@@ -41,7 +49,11 @@ Route::middleware(['auth','verified'])->group (function(){
     Route::delete('/product/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
 
     Route::get('/logs', [LogController::class, 'index'])->name('logs.index');
-    Route::get('/send-testenrollment', [TestEnrollmentController::class, 'sendTestNotification']);
+    Route::get('/send-notification', [TestEnrollmentController::class, 'sendTestNotification']) ->name('send-notification');
+   
+    Route::post('/send-notification', [TestEnrollmentController::class, 'sendTestNotification']) ->name('send-notification');
+    Route::get('/dashboard', [TestEnrollmentController::class, 'dashboard' ])->name('dashboard');
+
 });
 
 
